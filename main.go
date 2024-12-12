@@ -11,7 +11,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func main() {
+func Main() {
 	fmt.Println("Notion Posts API Ver. 1.0.0")
 	mux := http.NewServeMux()
 
