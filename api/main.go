@@ -11,22 +11,22 @@ import (
 	"github.com/joho/godotenv"
 )
 
-func Main() {
-	fmt.Println("Notion Posts API Ver. 1.0.0")
-	mux := http.NewServeMux()
+// func Main() {
+// 	fmt.Println("Notion Posts API Ver. 1.0.0")
+// 	mux := http.NewServeMux()
 
-	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-		fmt.Fprintf(w, "API Server listening on port 8080")
-	})
+// 	mux.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
+// 		fmt.Fprintf(w, "API Server listening on port 8080")
+// 	})
 
-	mux.HandleFunc("GET /posts", getPosts)
+// 	mux.HandleFunc("GET /posts", getPosts)
 
-	if err := http.ListenAndServe("localhost:8080", mux); err != nil {
-		fmt.Println(err.Error())
-	}
-}
+// 	if err := http.ListenAndServe("localhost:8080", mux); err != nil {
+// 		fmt.Println(err.Error())
+// 	}
+// }
 
-func getPosts(w http.ResponseWriter, r *http.Request) {
+func GetPosts(w http.ResponseWriter, r *http.Request) {
 	godotenv.Load()
 	// Extract the token from the Authorization header
 	authHeader := r.Header.Get("Authorization")
